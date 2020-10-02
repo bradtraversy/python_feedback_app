@@ -7,10 +7,11 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+flask-sqlalchemy = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
-flask-sqlalchemy = "*"
 gunicorn = "*"
+pyshorteners = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

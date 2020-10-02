@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Shorten the URL</title>
+</head>
+
+<body>
+    <section class="text-gray-500 bg-gray-900 body-font relative">
+        <div class="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
+            <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=720&q=600">
+
+            <form class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
+                action="{{url_for('shorttheurl')}}" method="POST">
+                <h1 class="text-white text-lg mb-1 font-medium title-font">Shorten Any URL</h1>
+                <br>
+                <input
+                    class="bg-gray-800 rounded border border-gray-700 focus:outline-none focus:border-indigo-500 text-base text-white px-4 py-2 mb-4"
+                    placeholder="Enter the URL" name="url" type="text">
+
+                <button
+                    class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Shorten</button>
+                {% if message %}
+
+                <p class="text-xs text-gray-500 mt-3">
+                <h6 style="color: darkgoldenrod;">{{message | safe }}</h6>
+                </p>
+                {% elif shortenedurl %}
+                <p class="text-xs text-gray-500 mt-3">
+                    <!--<h6 style="color: darkgoldenrod;">{{shortenedurl | safe }}</h6>-->
+                    <a style="color: darkgoldenrod;" href="{{shortenedurl}}">Shortened link</a>
+                </p>
+                {% endif %}
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-gray-700 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2020 Glance —
+                <a href="https://www.linkedin.com/in/i-am-manumathew/" class="text-gray-600 ml-1"
+                    rel="noopener noreferrer" target="_blank">@manu</a>
+            </p>
+
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
