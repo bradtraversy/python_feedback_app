@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../static/style.css" />
-    <title>Please rate your service</title>
-  </head>
-  <body>
-    <div class="container">
-      <img src="../static/logo.png" alt="Lexus" class="logo" />
-      {% if message %}
-      <p class="message">{{ message | safe }}</p>
-      {% endif %}
-      <form action="/submit" method="POST">
-        <div class="form-group">
-          <h3>Customer Name</h3>
-          <input
-            type="text"
-            name="customer"
-            placeholder="Name of vehicle owner"
-          />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="text-gray-700 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">GLANCE</span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                <a href="{{url_for('home')}}" class="mr-5 hover:text-gray-900">Home</a>
+                <a href="{{url_for('shortener')}}" class="mr-5 hover:text-gray-900">Shortener</a>
+
+                <a href="{{url_for('feedback')}}" class="mr-5 hover:text-gray-900">Feedback</a>
+            </nav>
         </div>
-        <div class="form-group">
-          <h3>Dealer</h3>
-          <select name="dealer">
-            <option value="">Select Dealer</option>
-            <option value="Tom Smith">Tom Smith</option>
-            <option value="Karen Swanson">Karen Swanson</option>
-            <option value="Jim Johnson">Jim Johnson</option>
-            <option value="Shauna Gifford">Shauna Gifford</option>
-          </select>
+    </header>
+    <section class="text-gray-500 bg-gray-900 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Shorten any big URL
+
+                </h1>
+
+
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded" alt="hero"
+                    src="https://images.unsplash.com/photo-1598628340858-201fe3c2cb7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=720&q=600">
+            </div>
         </div>
-        <div class="form-group">
-          <h3>Please rate your dealer</h3>
-          <input type="radio" name="rating" value="1" /> 1
-          <input type="radio" name="rating" value="2" /> 2
-          <input type="radio" name="rating" value="3" /> 3
-          <input type="radio" name="rating" value="4" /> 4
-          <input type="radio" name="rating" value="5" /> 5
-          <input type="radio" name="rating" value="6" /> 6
-          <input type="radio" name="rating" value="7" /> 7
-          <input type="radio" name="rating" value="8" /> 8
-          <input type="radio" name="rating" value="9" /> 9
-          <input type="radio" name="rating" value="10" checked /> 10
+    </section>
+    <footer class="text-gray-700 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2020
+                Glance —
+                <a href="https://www.linkedin.com/in/i-am-manumathew/" class="text-gray-600 ml-1"
+                    rel="noopener noreferrer" target="_blank">@manu</a>
+            </p>
+            </span>
         </div>
-        <div class="form-group">
-          <h3>Comments about your experience</h3>
-          <textarea
-            name="comments"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Tell us what you liked and/or did not like"
-          ></textarea>
-        </div>
-        <input type="submit" value="Submit" class="btn" />
-      </form>
-    </div>
-  </body>
+    </footer>
+</body>
+
 </html>
